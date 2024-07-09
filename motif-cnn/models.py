@@ -5,7 +5,7 @@ from inits import glorot
 import sys
 import tensorflow as tf
 
-flags = tf.app.flags
+flags = tf.compat.v1.flags
 FLAGS = flags.FLAGS
 
 
