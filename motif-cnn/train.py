@@ -10,7 +10,7 @@ from models import MotifCNN
 from metrics import *
 
 # Settings
-flags = tf.app.flags
+flags = tf.compat.v1.flags
 FLAGS = flags.FLAGS
 flags.DEFINE_string('dataset', 'dblp-p', 'Dataset string.')
 flags.DEFINE_integer('seed', 4, 'Random seed')
@@ -28,8 +28,8 @@ flags.DEFINE_string('motif_def', './motif_def_dblp_p.json', 'JSON file where mot
 flags.DEFINE_string('motif', 'apv,pap,pp1,pp2', 'Motifs used for model')
 
 # Set random seed
-tf.reset_default_graph()
-tf.set_random_seed(FLAGS.seed)
+tf.compat.v1.reset_default_graph()
+tf.random.set_seed(FLAGS.seed)
 random.seed(FLAGS.seed)
 np.random.seed(FLAGS.seed)
 
